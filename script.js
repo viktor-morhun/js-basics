@@ -1,8 +1,15 @@
 'use strict';
 
 const USER_NAME = prompt("What is your name?");
-
 alert(`Hello, ${USER_NAME}`);
+
+const SIDE_LENGTH = prompt("Enter the side length of the square to get the perimeter.");
+if (SIDE_LENGTH * 1 === +SIDE_LENGTH) {
+  alert(`The perimeter of a square with side ${SIDE_LENGTH} is ${SIDE_LENGTH * 4} units.`);
+} else {
+  alert(`Don't play with me. ${SIDE_LENGTH} is not a number!`);
+}
+
 yearCalculator();
 
 function yearCalculator (errorMessage = '') {
