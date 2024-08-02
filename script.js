@@ -1,10 +1,19 @@
 'use strict';
 
-document.addEventListener("visibilitychange", function() {
+document.addEventListener("DOMContentLoaded", function() {
   if (document.visibilityState === 'visible') {
     startApp();
+  } else {
+    document.addEventListener("visibilitychange", handleVisibilityChange);
   }
 });
+
+function handleVisibilityChange() {
+  if (document.visibilityState === 'visible') {
+    startApp();
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }
+}
 
 function startApp() {
   const USER_NAME = prompt("What is your name?");
