@@ -35,7 +35,7 @@ function yearCalculator(errorMessage = '') {
 
   if (+USER_BIRTHDATE >= 1900 && CURRENT_YEAR - +USER_BIRTHDATE >= 18) {
     alert(`You are ${CURRENT_YEAR - +USER_BIRTHDATE} years old. Ok, you can read the article.`);
-  } else if (CURRENT_YEAR - +USER_BIRTHDATE < 18) {
+  } else if (CURRENT_YEAR - +USER_BIRTHDATE < 18 && CURRENT_YEAR - +USER_BIRTHDATE >= 0) {
     alert(`You are too young to view this content. Please come back when you are 18. Your current age is ${CURRENT_YEAR - +USER_BIRTHDATE}.`);
     window.location.href = 'https://www.wikihow.com/Be-Older-Than-Your-Age';
   } else {
